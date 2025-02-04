@@ -1,4 +1,5 @@
 from llama_cpp import Llama
+print(dir(Llama))
 
 # Load the model with "vicuna" format safely
 try:
@@ -29,6 +30,7 @@ while True:
             top_p=0.9,
             stop=["\n\n", "###"]  # Improved stopping conditions
         )
+
 
         # Extract assistant's response safely
         if response.get("choices") and isinstance(response["choices"], list):
